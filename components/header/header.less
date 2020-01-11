@@ -1,0 +1,45 @@
+body {
+  background: @color-primary;
+  font-family: Arial, Helvetica, sans-serif;
+  color: @color-white;
+}
+
+.header {
+  padding: 12px 20px;
+  border: 1px solid #333;
+  border-bottom: 1px solid #2a2a2a;
+  position: relative;
+
+  &.selected {
+    background: #232323;
+  }
+
+  h1 {
+    color: @color-white;
+  }
+
+  p {
+    font-size: 20px;
+    background: gray;
+  }
+
+  button {
+    border: 1px solid #6d6c6c;
+    color: #fff;
+    border-radius: 3px;
+    padding: 10px 16px;
+    font-size: 16px;
+    background: #333;
+
+    &.highlight {
+      background: #021f8a;
+    }
+  }
+
+  .countwpr {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    font-size: 24px;
+  }
+}
