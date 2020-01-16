@@ -1,6 +1,6 @@
 # webpack-boilerplate
 
-It is bootstrap applicaiton of webpack projects
+It is a boilerplate applicaiton of webpack projects
 
 It has implemented with latest version of webpack(4) created a component structure with the help of different loaders 
 
