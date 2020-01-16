@@ -22,7 +22,7 @@ function getOutput(env) {
     };
   } else {
     return {
-      path: path.resolve(__dirname, "../ui.apps/src/main/content/jcr_root/apps/rmit/clientlibs/clientlib-site/"),
+      path: path.resolve(__dirname, "../client-site/"),
       publicPath: "",
       filename: "js/index.min.js",
       libraryTarget: "umd"
