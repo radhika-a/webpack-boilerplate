@@ -41,18 +41,16 @@ Please check html-webpack-plugin and html-loader to know more html component str
 
 ## Creating a new template
 
-Create a new teamplate html page in templates folder and make that entry into webpack.config.js file to serve the template into build with injecting components. 
+Create a new teamplate html page in templates folder and make that entry into template-entry.js file to serve the template into build with injecting components. Templates will generate into build folder in "npm start"
 
         |-templates
             |-products.html
 
-        //add the below code into webpack file to build
-        plugins.push(
-            new HtmlWebpackPlugin({
-              template: './templates/products.html',
-              filename: 'products.html'
-            })
-          );
+        const templatesList = [
+                    {path: "./templates/index.html", filename: "index.html"},
+                    {path: "./templates/products.html", filename: "products.html"} // new entry
+                ]
+                
+To amend any configuration changes for template generation and html component injection  please refer html-webpack-plugin configuration level options at https://github.com/jantimon/html-webpack-plugin#options
 
-for html-webpack-plugin configuration level options please refer https://github.com/jantimon/html-webpack-plugin#options
 
