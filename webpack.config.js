@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const templatesList = require("./template-entry")
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -31,15 +32,19 @@ function getOutput(env) {
 
 
 function getPlugins(env) {
-  // plugins.push(new CleanWebpackPlugin());
-  plugins.push(
-    new HtmlWebpackPlugin({
-      template: './templates/index.html',
-      filename: 'index.html'
-    })
-  )
+  plugins.push(new CleanWebpackPlugin());
 
   if (env && env.dev) {
+    templatesList.map(function(item){
+      plugins.push(
+        new HtmlWebpackPlugin({
+          template: item.path,
+          filename: item.filename
+        })
+      )
+    });
+
+
     plugins.push(
       new BrowserSyncPlugin({
         host: "localhost",
