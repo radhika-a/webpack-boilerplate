@@ -22,3 +22,23 @@ Please check html-webpack-plugin and html-loader to know more html component str
 
 for html-webpack-plugin configuration level options please refer https://github.com/jantimon/html-webpack-plugin#options
 
+## Creating a component
+Create your new component directory under component folder eg: navigation
+        
+           |-components
+                |-navigation
+                    |-navigation.js
+                    |-navigation.html
+                    |-navigation.less
+                    
+Adding js entry into script.js which is under component folder
+
+        import "./navigation/navigation";
+In script.js you can maitain the order of components based on dependency order
+
+
+Adding less file entry into styles.less which is under component folder
+            
+            @import "./navigation/navigation.less";
+
+
